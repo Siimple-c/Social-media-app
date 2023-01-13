@@ -1,0 +1,282 @@
+@use '../abstracts/' as *;
+
+main{
+  position: relative;
+  top: 8.64rem;
+}
+
+main .container{
+  display: grid;
+  grid-template-columns: 18vw auto 20vw;
+  column-gap: 3.2rem;
+  position: relative;
+    @include large-screen{
+      grid-template-columns: 8rem auto 30vw ;
+      gap: 1.6rem;
+    }
+
+    @include medium-screen{
+      grid-template-columns: auto 8rem;
+      gap:0;
+    }
+}
+
+.middle .stories{
+  display: flex;
+  justify-content: space-between;
+  height: 19.2rem;
+  position: relative;
+  overflow: hidden;
+  gap: 0.8rem;
+}
+
+.middle .stories .story{
+  padding: $card-padding;
+  border-radius: $card-border-radius;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: $color-white;
+  font-size: 1.2rem;
+  background: $color-error;
+  width: 20%;
+  height: 100%;
+  margin-left: 2rem;
+  position: absolute;
+  overflow: hidden;
+}
+
+.middle .stories .story .name{
+  z-index: 2;
+}
+
+.middle .stories .story::before {
+  content: " ";
+  display: block;
+  background: linear-gradient(transparent, rgba(0,0,0,0.75));
+  width: 100%;
+  height: 7rem;
+  position: absolute;
+  bottom: 0;
+  
+}
+
+.middle .stories .story:nth-child(1){
+  background: url(../../assets/images/story-1.jpg) no-repeat center/cover;
+}
+.middle .stories .story:nth-child(2){
+  left: 15rem;
+  background: url(../../assets/images/story-2.jpg) no-repeat center/cover;
+}
+.middle .stories .story:nth-child(3){
+  left: 20rem;
+  background: url(../../assets/images/story-3.jpg) no-repeat center/cover;
+}
+.middle .stories .story:nth-child(4){
+  left: 30rem;
+  background: url(../../assets/images/story-4.jpg) no-repeat center/cover;
+}
+.middle .stories .story:nth-child(5){
+  left: 40rem;
+  background: url(../../assets/images/story-5.jpg) no-repeat center/cover;
+}
+.middle .stories .story:nth-child(6){
+  left: 50rem;
+  background: url(../../assets/images/story-6.jpg) no-repeat center/cover;
+}
+
+.middle .story .profile-picture{
+  width: 3.2rem;
+  height: 3.2rem;
+  align-self: start;
+  border: 2px solid $color-primary;
+}
+
+.right-arrow, 
+.left-arrow{
+  position: absolute;
+  font-size: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  opacity: 20%;
+  transition: .2s ease;
+  &:hover{
+    opacity: 45%;
+  }
+}
+
+.right-arrow{
+  right: 0;
+}
+
+/* ============ CREATE POST ================= */
+.middle .create-post{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+  background: $color-white;
+  padding: 0.6rem $card-padding;
+  border-radius: $border-radius;
+}
+
+.middle .create-post input[type="text"]{
+  justify-self: start;
+  width: 100%;
+  padding-left: 1.6rem;
+  background: transparent;
+  color: $color-dark;
+  margin-right: 1rem;
+}
+
+/* ========== FEEDS =========== */
+.middle .feeds .feed{
+  background: $color-white;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  margin: 1.6rem 0;
+  font-size: 1.36rem;
+  line-height: 1.5;
+}
+
+.middle .feed .head{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+}
+
+.middle .feed .user{
+  display: flex;
+  gap: 1.6rem;
+}
+
+.middle .feed .photo{
+  border-radius: $card-border-radius;
+  overflow: hidden;
+  margin: 1.12rem 0;
+}
+
+.middle .liked-by{
+  display: flex;
+}
+
+.middle .liked-by span{
+  width: 2.24rem;
+  height: 2.24rem;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid $color-white;
+  margin-left: -.96rem;
+}
+
+.middle .liked-by span:first-child{
+  margin: 0;
+}
+
+.middle .liked-by p{
+  margin-left: .8rem;
+} 
+
+/* -------------- RIGHT ------------ */
+main .container .right{
+  height: max-content;
+  position: sticky;
+  top: $sticky-top-right;
+  bottom: 0;
+}
+
+.right .messages{
+  background: $color-white;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+}
+
+.right .messages .heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+
+.right .messages i{
+  font-size: 2.24rem;
+}
+
+ .right .messages .search-bar{
+  display: flex;
+  margin-bottom: 1.6rem;
+ }
+
+ .right .messages .message{
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+  align-items: start;
+ }
+
+ .right .messages .profile-picture{
+  position: relative;
+  overflow: visible;
+ }
+
+ .right .profile-picture img{
+  border-radius: 50%;
+ }
+
+ .right .messages .message:last-child{
+  margin: 0;
+ }
+
+ .right .messages .message p{
+  font-size: 1.28rem;
+ }
+
+ .right .messages .message .active{
+  width: 1.28rem;
+  height: 1.28rem;
+  border-radius: 50%;
+  border: 3px solid $color-white;
+  background: $color-ok;
+  position: absolute;
+  bottom:0;
+  right: 0; 
+ }
+
+  /* ------------- FRIEND REQUESTS ------------ */
+  .right .adverts{
+    margin-top: 1.6rem;
+  }
+
+  .right .adverts h4{
+    color: $color-gray;
+    margin: 1.6rem 0;
+  }
+
+  .right .advert{
+    background: $color-white;
+    padding: $card-padding;
+    border-radius: $card-border-radius;
+    margin-bottom: 1.12rem;
+  }
+
+  .right .advert .info{
+    display: flex;
+    gap: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  @include medium-screen{
+    main .container .middle{
+      grid-column: 1/-1;
+    }
+  
+    main .container .right{
+      display: none;
+    }
+  }

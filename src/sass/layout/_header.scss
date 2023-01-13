@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+nav{
+  width: 100%;
+  background: $color-white;
+  padding: 1.3rem 0;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+nav .container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create{
+  display: flex;
+  justify-content: space-between;
+  gap: 3.2rem;
+  @include medium-screen{
+    gap: 1.7rem;
+  }
+}

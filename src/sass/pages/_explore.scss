@@ -1,0 +1,118 @@
+@use '../abstracts/' as *;
+
+.explore-nav{
+  display: flex;
+}
+
+.explore-nav .search-bar{
+  margin-left: 5rem;
+  @include medium-screen{
+    .explore-nav .search-bar{
+      margin-left: 3rem;
+    }
+  }
+    @include small-screen{
+      .explore-nav .search-bar{
+        margin-left: 3rem;
+      }
+    }
+}
+
+.search-btn{
+  display: inline-block;
+}
+@include medium-screen{
+  #explore-search-bar{
+    display: inline;
+  }
+}
+
+.overlay{
+position: fixed;
+top:0;
+bottom:0;
+right:0;
+left: 0;
+background: rgba(0,0,0,.5);
+z-index:2;
+display: none;
+&.open{
+  display: grid;
+  justify-items:center;
+  align-items:center;
+}
+&__body{
+  width: 80rem;
+  background: $color-white;
+  padding: $card-padding;
+}
+}
+
+
+
+//Expereimentally, no grid-template-column was specified
+// thereby leaving room for the auto-flow to direct 
+// the shape of the gallery.
+#picture-gallery{
+  width: 100%;
+  display: grid;
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  gap: .3rem;
+}
+
+.picture{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  &-overlay{
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(180, 180, 168,.4);
+    transition: .5s;
+    opacity: 0%;
+  }
+  &-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    position: relative;
+    border-radius: $card-border-radius;
+    &.v2{
+      grid-row: span 2;
+    }
+    &.v3{
+      grid-row: span 3;
+    }
+    &.v4{
+      grid-row: span 4;
+    }
+    &.h2{
+      grid-column: span 2;
+    }
+    &.v3{
+      grid-column: span 3;
+    }
+    &.v4{
+      grid-column: span 4;
+    }
+    &:hover .picture-overlay{
+      opacity: 50%;
+    }
+  }
+}
+
+.download-btn{
+  border: .1rem solid rgba(90, 84, 84, .5);
+  border-radius: $border-radius;
+  padding: $btn-padding;
+  background: rgba(0,0,0,.7);
+  color:#fff;
+}

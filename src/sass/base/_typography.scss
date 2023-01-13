@@ -1,0 +1,9 @@
+@use '../abstracts/' as *;
+
+.text-bold{
+  font-weight: 500;
+}
+
+.text-muted{
+  color: $color-gray;
+}

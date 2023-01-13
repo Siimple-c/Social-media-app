@@ -1,0 +1,78 @@
+@use '../abstracts/' as *;
+
+//  NOTIFICATION PANE
+.left .notification-pane {
+  position: absolute;
+  top: 0;
+  left: 110%;
+  width: 48rem;
+  background: $color-white;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  box-shadow: 0 0 3.2rem $color-dark;
+  z-index: 8;
+  display: none;
+  &.open{
+    display: block;
+  }
+    &::before{
+      content: "";
+      width: 1.92rem;
+      height: 1.92rem;
+      display: block;
+      background: $color-white;
+      position: absolute;
+      left: -.96rem;
+      transform: rotate(45deg);
+        @include medium-screen{
+          display: absolute;
+          top: 2.08rem;
+          left: calc(3.2rem - .96rem);
+          display: block;
+        }
+     }  
+     & > div{
+      display: flex;
+      align-items: start;
+      gap: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
+    & small{
+      display: block;
+    }
+    @include medium-screen{
+      position: absolute;
+      left: -32rem;
+      width: 32rem;
+    }
+}
+
+// THEME PANE
+#theme-pane{
+  position: absolute;
+  left: 110%;
+  width: 12rem;
+  background: $color-white;
+  border-radius: $card-border-radius;
+  padding: $card-padding;
+  box-shadow: 0 0 3.2rem $color-dark;
+  z-index: 8;
+  display: none;
+  &::before{
+    content: "";
+    width: 1.92rem;
+    height: 1.8rem;
+    display: block;
+    background: $color-white;
+    position: absolute;
+    left: -.96rem;
+    transform: rotate(45deg);
+      @include medium-screen{
+        display: absolute;
+        top: 2.08rem;
+        left: calc(3.2rem - .96rem);
+        display: block;
+      }
+   }  
+}
+

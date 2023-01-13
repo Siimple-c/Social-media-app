@@ -1,0 +1,19 @@
+@use '../abstracts/variables' as *;
+
+@mixin small-screen {
+  @media screen and (max-width: map-get($breakpoints, small-screen)){
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media screen and (max-width: map-get($breakpoints, medium-screen)){
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media screen and (max-width: map-get($breakpoints, big-screen)){
+    @content;
+  }
+}
