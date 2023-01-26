@@ -38,10 +38,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size:2.24 ;
+  font-size:2rem ;
   margin: .96rem;
+}
+
+.like{
+  cursor: pointer;
+  &.active{
+    color: red;
+  }
 }
 
 a{
   color: $color-black;
+}
+
+.label-in-btn{
+  cursor: pointer;
+@include medium-screen{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    padding-top: 13%;
+}
 }

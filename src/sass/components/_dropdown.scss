@@ -12,6 +12,15 @@
   box-shadow: 0 0 3.2rem $color-dark;
   z-index: 8;
   display: none;
+  @include medium-screen{
+    left:-100%;
+    bottom: 100%;
+    top: -518%;
+    overflow: auto;
+    height: 28rem;
+    width: 28rem;
+    position: absolute;
+  }
   &.open{
     display: block;
   }
@@ -39,11 +48,6 @@
     }
     & small{
       display: block;
-    }
-    @include medium-screen{
-      position: absolute;
-      left: -32rem;
-      width: 32rem;
     }
 }
 
