@@ -1,4 +1,5 @@
-App is responsive
+App is responsive.
+Active buttons ( like, new post, notifications, preferences, explore);
 
 Search functionality in messages
 
