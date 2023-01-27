@@ -300,6 +300,7 @@ a {
 
 #picture-gallery {
   width: 100%;
+  margin-top: 6.3rem;
   display: grid;
   grid-auto-rows: 100px;
   grid-auto-flow: dense;
@@ -442,28 +443,35 @@ main .container {
 }
 
 .middle .stories .story:nth-child(2) {
-  left: 15rem;
   background: url(../../assets/images/story-2.jpg) no-repeat center/cover;
 }
 
 .middle .stories .story:nth-child(3) {
-  left: 20rem;
   background: url(../../assets/images/story-3.jpg) no-repeat center/cover;
 }
 
 .middle .stories .story:nth-child(4) {
-  left: 30rem;
   background: url(../../assets/images/story-4.jpg) no-repeat center/cover;
 }
 
 .middle .stories .story:nth-child(5) {
-  left: 40rem;
   background: url(../../assets/images/story-5.jpg) no-repeat center/cover;
 }
 
 .middle .stories .story:nth-child(6) {
-  left: 50rem;
   background: url(../../assets/images/story-6.jpg) no-repeat center/cover;
+}
+
+.middle .stories .story:nth-child(7) {
+  background: url(../../assets/images/story-7.jpg) no-repeat center/cover;
+}
+
+.middle .stories .story:nth-child(8) {
+  background: url(../../assets/images/story-8.jpg) no-repeat center/cover;
+}
+
+.middle .stories .story:nth-child(9) {
+  background: url(../../assets/images/story-9.jpg) no-repeat center/cover;
 }
 
 .middle .story .profile-picture {
@@ -480,8 +488,8 @@ main .container {
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-  z-index: 10;
-  opacity: 10%;
+  z-index: 5;
+  opacity: 80%;
   transition: 0.2s ease;
 }
 .right-arrow:hover,
